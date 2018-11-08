@@ -1,16 +1,27 @@
+/**
+ * Algoritmo de insersion.
+ * 
+ * 1. Recorrer todos los elementos del arreglo de izquierda a derecha.
+ * 2. Recorrer todos los elementos del arreglo dependiendo del valor actual de derecha a izquierda.
+ * 3. Agregar validación para terminar el ciclo interior únicamente si el valor del elemento anterior es menor al current.
+ * 4. Hacer movimiento de valores de izquierda a derecha. 
+ * 5. Insertar el elemento actual en el lugar correspondiente
+ */
+function insertionSort(data) {
 
-/** Insertion sort algorithm */
+    let i, j, currentValue;
 
-const insertionSort = function (data) {
-    let i, j;
-    for (j = 1; j < data.length; j++) {
-        let currentValue = data[j];
-        for (i = j - 1; i >= 0 && data[i] > currentValue; i--) {
-            data[i + 1] = data[i];
+    for (i = 1; i < data.length; i++) {
+        currentValue = data[i];
+
+        for (j = i - 1; j >= 0 && (data[j] > currentValue); j--) {
+            data[j + 1] = data[j];
         }
-        data[i + 1] = currentValue;
+
+        data[j + 1] = currentValue;
     }
-    return data;
+
+    console.log(data);
 }
 
 export default insertionSort;

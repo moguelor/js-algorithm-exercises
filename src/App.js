@@ -6,7 +6,6 @@ import insertionSort from './algorithms/sort/insertionSort';
 
 console.log('InsertionSort [5,2,4,6,1,3]:', insertionSort([5,2,4,6,1,3]));
 
-
 class App extends Component {
   render() {
     return (
